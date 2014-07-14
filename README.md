@@ -3,12 +3,12 @@ SmartTable v1.0
 聪明的表格，基于一套数据源使用Ajax获取数据，并展现成表格与图像的形式，并且支持下载（思路源于talkingdata）
 
 开源引入：
-	Bootstrap 3.0
-	Bootstrap respond (IE解决方案)
-	Jquery 11.02
-	dataTables
-	highcharts
-	table2CSV
+	Bootstrap 3.0<br/\>
+	Bootstrap respond (IE解决方案)<br/\>
+	Jquery 11.02<br/\>
+	dataTables<br/\>
+	highcharts<br/\>
+	table2CSV<br/\>
 
 
 <h3>示例代码</h3>
