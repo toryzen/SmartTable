@@ -1,3 +1,7 @@
+/*!
+ * SmartTable 2.0
+ * http://toryzen.com/ | Released under GPLv3 license
+ */
 $(document).ready(function() {
 	$(".smart_point").each(function(){
 		var title = $(this).attr('title');	//项目标题
