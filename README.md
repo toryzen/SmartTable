@@ -13,23 +13,23 @@ SmartTable v1.0
 
 <h3>示例代码</h3>
 <pre>
-<div class="panel panel-primary">
-  	  <input class="smart_data_src" type="hidden" value="./demodata.txt"/>
-	  <div class="panel-heading">
-	    <h3 class="panel-title">
-	    	<b>SmartTables示例</b>
-	    	<span style="margin:-7px -5px 0 0;float:right">
-	    	  <button type="button" class="btn btn-default btn-sm change_pic"><span title="显示图形" class="glyphicon glyphicon-picture"></span></button>
-	    	  <button type="button" class="btn btn-default btn-sm change_table"><span title="显示表格" class="glyphicon glyphicon-list-alt"></span></button>
-	    	  <button type="button" class="btn btn-default btn-sm down_load"><span title="下载表格" class="glyphicon glyphicon-download"></span></button>
-	    	</span>
-	   </h3>
-	  </div>
-	  <div class="panel-body">
-	  	<div class="smart_pic" ></div>
-	    <div class="smart_table"></div>
-	  </div>
-  </div>
+&lt;div class=&quot;panel panel-primary&quot;&gt;
+  	  &lt;input class=&quot;smart_data_src&quot; type=&quot;hidden&quot; value=&quot;./demodata.txt&quot;/&gt;
+	  &lt;div class=&quot;panel-heading&quot;&gt;
+	    &lt;h3 class=&quot;panel-title&quot;&gt;
+	    	&lt;b&gt;SmartTables示例&lt;/b&gt;
+	    	&lt;span style=&quot;margin:-7px -5px 0 0;float:right&quot;&gt;
+	    	  &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm change_pic&quot;&gt;&lt;span title=&quot;显示图形&quot; class=&quot;glyphicon glyphicon-picture&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+	    	  &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm change_table&quot;&gt;&lt;span title=&quot;显示表格&quot; class=&quot;glyphicon glyphicon-list-alt&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+	    	  &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm down_load&quot;&gt;&lt;span title=&quot;下载表格&quot; class=&quot;glyphicon glyphicon-download&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+	    	&lt;/span&gt;
+	   &lt;/h3&gt;
+	  &lt;/div&gt;
+	  &lt;div class=&quot;panel-body&quot;&gt;
+	  	&lt;div class=&quot;smart_pic&quot; &gt;&lt;/div&gt;
+	    &lt;div class=&quot;smart_table&quot;&gt;&lt;/div&gt;
+	  &lt;/div&gt;
+&lt;/div&gt;
 </pre>
 其中 class 为 smart_data_src 的value值为数据地址
 
