@@ -1,6 +1,10 @@
 $(document).ready(function() {
-	$(".smart_data_src").each(function(){
-	    var src = $(this).val();
+	$(".smart_point").each(function(){
+		var title = $(this).attr('title');	//项目标题
+		var src = $(this).attr('src');		//数据源
+		var ptype = $(this).attr('ptype');	//图表类型
+		var front = $(this).attr('front');	//默认显示
+		$(this).html( '<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title"><b>'+title+'</b><span style="margin:-4px -5px 0 0;float:right"><button type="button" class="btn btn-default btn-sm change_pic"><span title="显示图形" class="glyphicon glyphicon-picture"></span></button><button type="button" class="btn btn-default btn-sm change_table"><span title="显示表格" class="glyphicon glyphicon-list-alt"></span></button><button type="button" class="btn btn-default btn-sm down_load"><span title="下载表格" class="glyphicon glyphicon-download"></span></button></span></h3></div><div class="panel-body"><div class="smart_pic" ></div><div class="smart_table"></div></div></div>' );
 		var pic_categories =  new Array();	//画图标图
 		var pic_data =  new Array();
 		$.ajaxSetup({ async :false});
@@ -9,9 +13,7 @@ $(document).ready(function() {
 				recive_data = eval(data);
 				table_data = recive_data[0];	//表数据
 				columns    = recive_data[1];	//表格头
-				setps    = recive_data[2];	//表格头
-				ptype    = recive_data[3];	//图类型
-				front    = recive_data[4];	//默认显示
+				setps    = parseInt(table_data.length/10);	//表格头
 				//作图数据
 				for(var x=1;x<table_data[0].length;x++){
 					pic_data[x-1]=new Array();
@@ -30,7 +32,7 @@ $(document).ready(function() {
 					series[i-1]['data'] = pic_data[i-1];
 				}
 	    });
-		$(this).parent().find('.smart_pic').highcharts({
+		$(this).find('.smart_pic').highcharts({
         	chart: {spacingBottom:30,type:ptype},
             title: {text: ''},
             xAxis: {
@@ -55,8 +57,8 @@ $(document).ready(function() {
             },
             series: series
         });
-		$(this).parent().find('.smart_table').html( '<table style="clear:both"  class="table table-striped table_val"></table>' );
-		$(this).parent().find('.smart_table').find('.table_val').dataTable( {
+		$(this).find('.smart_table').html( '<table style="clear:both"  class="table table-striped table_val"></table>' );
+		$(this).find('.smart_table').find('.table_val').dataTable( {
 		                 		"data": table_data,
 		                 		"scrollY": 400,
 		                        "scrollX": true,
@@ -90,9 +92,9 @@ $(document).ready(function() {
 		                        }
 		} );
 		if(front=='pic'){
-			$(this).parent().find('.smart_table').hide();
+			$(this).find('.smart_table').hide();
 		}else{
-			$(this).parent().find('.smart_pic').hide();
+			$(this).find('.smart_pic').hide();
 		}
 	});
 	
@@ -101,14 +103,12 @@ $(document).ready(function() {
     $('.change_pic').click(function(){
     	$(this).parent().parent().parent().parent().find('.smart_pic').show();
     	$(this).parent().parent().parent().parent().find('.smart_table').hide();
-    	//$(this).parent().find('.down_load').hide();
     });
     
 	//切换表格
     $('.change_table').click(function(){
     	$(this).parent().parent().parent().parent().find('.smart_pic').hide();
     	$(this).parent().parent().parent().parent().find('.smart_table').show();
-    	//$(this).parent().find('.down_load').show();
     });
 	
     //点击下载
