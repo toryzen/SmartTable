@@ -1,4 +1,4 @@
-SmartTable v2.0
+SmartTable v2.2
 =======
 聪明的表格，基于一套数据源使用Ajax获取数据，并展现成表格与图像的形式，并且支持下载（思路源于talkingdata）
 
@@ -42,5 +42,6 @@ SmartTable v2.0
 
 
 <h3>更新日志</h3>
-* 2014-07-14发布:V2.0版本发布
+* 2014-07-14发布:V2.2版本发布,将highchart,datatables封装入SmartTable
+* 2014-07-14发布:V2.0版本发布,采用在HTML中获取参数形式生成SmartTable
 * 2014-07-14发布:V1.0版本发布

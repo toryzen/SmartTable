@@ -2,6 +2,19 @@
  * SmartTable 2.0
  * http://toryzen.com/ | Released under GPLv3 license
  */
+function dirname(file_src) {
+    var dir=''
+    ns = file_src.split("/")
+    for (i=0;i<ns.length-1;i++) {
+        dir = dir + ns[i] + '/' 
+    }
+    return dir
+}
+dir = dirname(document.all['smarttablejs'].src);
+document.write('<script type="text/javascript" src="'+dir+'highcharts/highcharts.js"></script>');
+document.write('<script type="text/javascript" src="'+dir+'datatables/js/jquery.dataTables.min.js"></script>');
+document.write('<script type="text/javascript" src="'+dir+'table2csv/table2CSV.js"></script>');
+document.write('<link rel="stylesheet" type="text/css" href="'+dir+'datatables/css/jquery.dataTables.min.css">');
 $(document).ready(function() {
 	$(".smart_point").each(function(){
 		var title = $(this).attr('title');	//项目标题
