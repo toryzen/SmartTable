@@ -1,4 +1,4 @@
-SmartTable v2.3
+SmartTable v3.0
 =======
 聪明的表格，基于一套数据源使用Ajax获取数据，并展现成表格与图像的形式，并且支持下载（思路源于talkingdata）<br/>
 
@@ -14,11 +14,11 @@ SmartTable v2.3
 <h3>示例代码</h3>
 <pre>
 
-  &lt;div class=&quot;smart_here&quot; src=&quot;./demodata.txt&quot; title=&quot;SmartTables示例(Line)&quot; ptype=&quot;line&quot; front=&quot;pic&quot; &gt;&lt;/div&gt;
+  &lt;div class=&quot;smart_here&quot; src=&quot;./demodata.txt&quot; title=&quot;SmartTables示例(Line)&quot; ptype=&quot;line&quot; pdim=&quot;a&quot; front=&quot;pic&quot; &gt;&lt;/div&gt;
   
-  &lt;div class=&quot;smart_here&quot; src=&quot;./demodata.txt&quot; title=&quot;SmartTables示例(Area)&quot; ptype=&quot;area&quot; front=&quot;table&quot; &gt;&lt;/div&gt;
+  &lt;div class=&quot;smart_here&quot; src=&quot;./demodata.txt&quot; title=&quot;SmartTables示例(Area)&quot; ptype=&quot;area&quot; pdim=&quot;b&quot; front=&quot;table&quot; &gt;&lt;/div&gt;
   
-  &lt;div class=&quot;smart_here&quot; src=&quot;./demodata.txt&quot; title=&quot;SmartTables示例(Column)&quot; ptype=&quot;column&quot; front=&quot;pic&quot; &gt;&lt;/div&gt;
+  &lt;div class=&quot;smart_here&quot; src=&quot;./demodata.txt&quot; title=&quot;SmartTables示例(Column)&quot; ptype=&quot;column&quot; pdim=&quot;a&quot; front=&quot;pic&quot; &gt;&lt;/div&gt;
 
 </pre>
 元素的class设置为smart_here,SmartTable会自动检测此组件并进行图表写入<br/\>
@@ -26,6 +26,7 @@ SmartTable v2.3
 参2:title 表格标题<br/\>
 参3:ptype 图类型(area/line/column)<br/\>
 参4:front 默认显示(pic/table)<br/\>
+参5:pdim  显示纬度(a/b)<br/\>
 
 <h3>数据格式</h3>
 <pre>
@@ -42,6 +43,7 @@ SmartTable v2.3
 
 
 <h3>更新日志</h3>
+* 2014-07-16发布:V3.0版本发布,支持多纬度显示切换,支持线图,柱状图,区域图快速切换
 * 2014-07-14发布:V2.3版本发布,元素改名smart_here
 * 2014-07-14发布:V2.2版本发布,将highchart,datatables封装入SmartTable
 * 2014-07-14发布:V2.0版本发布,采用在HTML中获取参数形式生成SmartTable
