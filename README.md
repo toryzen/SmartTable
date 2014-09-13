@@ -17,7 +17,6 @@ SmartTable v3.2
 <pre>
   &lt;div class="smart_here" src="./demodata.txt" title="SmartTables示例(Line)" pdim="time"  front="graph:area" >&lt;/div>
   &lt;div class="smart_here" src="./demodata2.txt" title="SmartTables示例(Area)" pdim="event"  front="table" >&lt;/div>
-  &lt;div class="smart_comb_here" title="统计维度汇总" src="./demodata.txt;./demodata2.txt;./demodata.txt;./demodata.txt" ptitle="汇总1;汇总2;汇总1;汇总1">&lt;/div>
 </pre>
 元素的class设置为smart_here,SmartTable会自动检测此组件并进行图表写入<br/>
 
