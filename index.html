@@ -6,7 +6,7 @@
 	<script src="./jquery.1102.min.js"></script>
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<script src="./bootstrap/js/respond.min.js"></script>
-	
+	<!--smarttable 绘图js-->
 	<script src="./smarttable/smarttable.js" id="smarttablejs"></script>
 </head>
 <body>
@@ -15,39 +15,13 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
   
-  <div class="smart_here" src="./demodata.txt" title="SmartTables示例(Line)" pdim="b" ptype="line" front="pic" ></div>
-  
-  <div class="smart_here" src="./demodata.txt" title="SmartTables示例(Line)" pdim="a" ptype="line" front="pic" ></div>
-  
-  <div class="smart_here" src="./demodata.txt" title="SmartTables示例(Line)" pdim="a" ptype="area" front="pic" ></div>
-  
-  <div class="smart_here" src="./demodata.txt" title="SmartTables示例(Line)" pdim="a" ptype="area" front="table" ></div>
-  <!-- 
-	<div class="smart_her" src="./demodata.txt" title="SmartTables示例(Line)" ptype="line" pdim="a" front="pic"  >
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	  	<h3 class="panel-title"><b>'+title+'</b><span style="margin:-4px -5px 0 0;float:right"><button type="button" class="btn btn-default btn-sm change_pic"><span title="显示图形" class="glyphicon glyphicon-picture"></span></button>&nbsp;<button type="button" class="btn btn-default btn-sm change_table"><span title="显示表格" class="glyphicon glyphicon-list-alt"></span></button></span></h3>
-	  </div>
-	  <div class="panel-body">
-	    <div class="smart_pic"></div>
-	    <div class="smart_table"></div>
-	  </div>
-	  <div class="panel-footer">
-		  <span style="margin:-8px -8px 0 0;float:right">
-		  	<span class="table_tools">
-		  		<span title="下载数据" class="tools_download glyphicon glyphicon-download"></span>&nbsp;
-		  	</span>
-		  	<span class="pic_tools">
-			  	<span title="更换纬度" class="tools_pic_dim glyphicon glyphicon-resize-full"></span>&nbsp;
-			  	<span title="折线图" class="tools_pic_line glyphicon glyphicon-random"></span>&nbsp;
-			  	<span title="柱状图" class="tools_pic_column glyphicon glyphicon-stats"></span>&nbsp;
-			  	<span title="区域图" class="tools_pic_area glyphicon glyphicon-tower"></span>&nbsp;
-		  	</span>
-		  </span>
-	  </div>
-	</div>
-	</div>
-  -->
+	<div class="smart_here" src="./demodata.txt" title="SmartTables示例(Line)" pdim="time"  front="graph:area" ></div>
+	<div class="smart_here" src="./demodata2.txt" title="SmartTables示例(Area)" pdim="event"  front="table" ></div>
+	
+	<div class="smart_comb_here" title="统计维度汇总" src="./demodata.txt;./demodata2.txt;./demodata.txt;./demodata.txt" ptitle="汇总1;汇总2;汇总1;汇总1"></div>
 
+	
+</div>
+</div>
 </body>
 </html>
