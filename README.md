@@ -5,7 +5,7 @@ SmartTable v3.4
 开源引入：Bootstrap 3.0，Bootstrap respond (IE解决方案)，Jquery 11.02，dataTables，echarts，table2CSV<br/>
 
 <h3>1.功能展示:</h3>
-![image](https://github.com/toryzen/SmartTable/raw/master/screenshots/v3.2.png)
+![image](https://github.com/toryzen/SmartTable/raw/master/screenshots/v3.4.png)
 
 
 - 右上角为切换图形表格选项
@@ -53,17 +53,19 @@ Demo
 - 参4:front 默认显示在前面
 	- table			表格
 	- graph		    图形
-
-<h3>3.数据格式</h3>
-<pre>
-[
-	[['2014-07-20','0','12','6444','0'],['2014-07-21','35','3','444','60'],['2014-07-22','9','10','144','0'],['2014-07-23','1','5','144','50'],['2014-07-24','2','6','155','1'],['2014-07-25','0','8','144','5'],['2014-07-26','7','1','220','0']],
-	[{ "title": "时间"},{ "title": "iPad"},{ "title": "iPhone"},{ "title": "iPod touch"},{ "title": "PC"}]
-]
-</pre>
-采用Js数组形式的传参方式<br/>
-参1：数据(注意在数据中,第一列为图形中的横坐标)<br/>
-参2：表头(注意在表头中,第一列为图形元素)<br/>
+- 辅参1:graph	图形的辅助参数
+	- ptype		图片类型
+		- line	线图
+		- bar	柱状图
+		- area	区域图
+	- markPoint	图形中的点标注
+		- 具体参考：http://echarts.baidu.com/doc/doc.html#SeriesMarkPoint
+	- markLine  图形中的线标注
+		- 具体参考：http://echarts.baidu.com/doc/doc.html#SeriesMarkLine
+- 辅参2:table	表格的辅助参数
+	- scrolly	y轴长度
+	- page		分页数
+	- scrollx	横轴拖拽条
 
 注意：测试代码时请放入IIS或Apache下，然后使用URL路径访问，不要直接打开index.html
 
@@ -81,6 +83,7 @@ Demo
 - 参2:title  表格的名称
 
 <h3>更新日志</h3>
+* 2015-01-08发布:V3.4版本发布,大更新，采用Echart替代HighCharts,增加点/线标注，新增加一种维度
 * 2014-09-13发布:V3.2版本发布,大更新，扩展至三种纬度(事件/时间/统计)，并新增SmartTable汇集
 * 2014-07-16发布:V3.0版本发布,支持多纬度显示切换,支持线图,柱状图,区域图快速切换
 * 2014-07-14发布:V2.3版本发布,元素改名smart_here
