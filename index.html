@@ -14,9 +14,36 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
   
-	<div class="smart_here" src="./demodata.txt" ></div>
+	<div class="smart_here">
+        [{"data":[['2014-07-20','500','12','64','0'],['2014-07-21','35','3','444','60'],['2014-07-22','9','10','144','0'],['2014-07-23','1','5','144','50'],['2014-07-24','2','656','155','1'],['2014-07-25','0','8','144','5'],['2014-07-26','7','1','220','0']],
+        "column":[{ "title": "时间"},{ "title": "iPad"},{ "title": "iPhone"},{ "title": "iPod touch"},{ "title": "PC"}],
+        "title":"示例测试",
+        "pdim":"time",
+        "front":"graph",
+        "graph":{
+            "ptype":"line;area:1;bar",
+            "markPoint":{
+                "data" : [{"type" : 'max', "name": "最大值"}]
+            },"markLine":{
+                "data" : [{"type" : "max", "name": "自定义名字"}]
+            },
+            "zoom":{
+                "start":0,
+                "end":100
+            }
+        },
+        "table":{
+             "scrolly":400,
+             "page":200,
+             "scrollx":true
+        }
+        }]
+            
+    </div>
 
-	<div class="smart_here" src="./demodata2.txt"></div>
+	<div class="smart_here" src="./demodata.txt"></div>
+    
+    <div class="smart_here" src="./demodata2.txt"></div>
 	
 	<div class="smart_comb_here" title="统计维度汇总" src="./demodata.txt;./demodata2.txt" ptitle="汇总1;汇总2"></div>
 

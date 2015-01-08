@@ -17,6 +17,8 @@ document.write('<script type="text/javascript" src="'+dir+'echarts/echarts-all.j
 document.write('<script type="text/javascript" src="'+dir+'datatables/js/jquery.dataTables.min.js"></script>');
 document.write('<script type="text/javascript" src="'+dir+'table2csv/table2CSV.js"></script>');
 document.write('<link rel="stylesheet" type="text/css" href="'+dir+'datatables/css/jquery.dataTables.min.css">');
+document.write('<style>.smart_here{display: none }</style>');
+
 
 $(document).ready(function() {
 	/*SmartTable*/
@@ -53,6 +55,10 @@ $(document).ready(function() {
 	}
 	function ajax_loop(src,obj){
 		$.get(src,function(data){
+            if(!src){
+                data = $(obj).html();
+                $(obj).html('');
+            }
             recive_data = eval(data);
             param = {}
             param = {
@@ -123,6 +129,7 @@ $(document).ready(function() {
 				}
 			}
 			recive_data = [table_data,columns];
+            $(obj).closest('.smart_here').css('display','inline');
 			//写入SmartTable
 			$(obj).append( '<div class="panel panel-default">  <div class="panel-heading"> <h3 class="panel-title"><b>'+param['title']+'</b><span style="margin:-7px -5px 0 0;float:right"><button type="button" class="btn btn-default btn-sm change_pic"><span title="显示图形" class="glyphicon glyphicon-picture"></span></button>&nbsp;<button type="button" class="btn btn-default btn-sm change_table"><span title="显示表格" class="glyphicon glyphicon-list-alt"></span></button></span></h3> </div>  <div class="panel-body">	<div class="smart_pic" style="height:350px;width:100%"></div>	<div class="smart_table"></div>  </div>  <div class="panel-footer">	 <span style="margin:-8px -8px 0 0;float:right"><span class="table_tools"><span title="下载数据" class="tools_download glyphicon glyphicon-download"></span>&nbsp;</span><span class="pic_tools"><span title="折线图" ptype="line" class="tools_pic_type glyphicon glyphicon-random"></span>&nbsp;<span title="柱状图" ptype="bar" class="tools_pic_type glyphicon glyphicon-stats"></span>&nbsp;<span title="区域图"  ptype="area" class="tools_pic_type glyphicon glyphicon-tower"></span>&nbsp;</span></span> <span style="margin:-8px -8px 0 0;float:left"><span class="pic_dim_tools"> <span title="时间纬度" pdim="time" class="tools_pic_dim glyphicon glyphicon-time"></span>&nbsp;<span title="事件纬度" pdim="event" class="tools_pic_dim glyphicon glyphicon-resize-full"></span>&nbsp;<span title="统计(事件)维度" pdim="total_event" class="tools_pic_dim glyphicon glyphicon-indent-left"/> &nbsp;<span title="统计(时间)维度" pdim="total_time" class="tools_pic_dim glyphicon glyphicon-indent-right"/> &nbsp;  </span></span> </div></div>' );
 			$(obj).append( '<span class="smart_data hide">'+array_to_string(recive_data)+'</span>' );
@@ -552,7 +559,6 @@ $(document).ready(function() {
 		});
 		//工具-切换纬度
 		$('.tools_pic_dim').click(function(){
-			$("html,body").animate({scrollTop: $(this).position().top-500}, 0);
             eval($(this).closest('.smart_here').find('.smart_param').html());
 			recive_data = eval($(this).closest('.smart_here').find('.smart_data').html());
 			param['pdim'] = $(this).attr("pdim");
@@ -567,7 +573,6 @@ $(document).ready(function() {
 		});
         //工具-切换图表
 		$('.tools_pic_type').click(function(){
-			$("html,body").animate({scrollTop: $(this).position().top-500}, 0);
             eval($(this).closest('.smart_here').find('.smart_param').html());
 			recive_data = eval($(this).closest('.smart_here').find('.smart_data').html());
             param['graph']['ptype'] = $(this).attr("ptype");
