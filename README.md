@@ -1,11 +1,11 @@
-SmartTable v3.4
+SmartTable v3.5
 =======
 聪明的表格，基于一套数据源使用Ajax获取数据，并展现成表格与图像的形式，并且支持下载（思路源于talkingdata）<br/>
 
 开源引入：Bootstrap 3.0，Bootstrap respond (IE解决方案)，Jquery 11.02，dataTables，echarts，table2CSV<br/>
 
 <h3>1.功能展示:</h3>
-![image](https://github.com/toryzen/SmartTable/raw/master/screenshots/v3.4.png)
+![image](https://github.com/toryzen/SmartTable/raw/master/screenshots/v3.5.png)
 
 
 - 右上角为切换图形表格选项
@@ -33,7 +33,11 @@ Demo
 			"data" : [{"type" : 'max', "name": "最大值"}]
 		},"markLine":{
 			"data" : [{"type" : "max", "name": "自定义名字"}]
-		}
+		},
+        "zoom":{
+            "start":80,
+            "end":100
+        }
 	},
     "table":{
          "scrolly":400,
@@ -43,19 +47,24 @@ Demo
 }]
 </pre>
 - 参1:data   数据源(时间维度)
+
 - 参2:column 表头(事件)
+
 - 参3:title  SmartTable名称
+
 - 参3:pdim   默认维度
 	- time  时间纬度 ： 时间为横轴，每一条线为一个事件
 	- event 事件纬度 ： 事件为横轴，每一条线为一个时间
 	- total_time  统计(时间)纬度 ： 时间为横轴，展示各事件数值的一个加和与平均
 	- total_event 统计(事件)纬度 ： 事件为横轴，展示各时间数值的一个加和与平均
+    
 - 参4:front 默认显示在前面
     - all           全部显示
 	- table			表格
 	- graph		    图形
+    
 - 辅参1:graph	图形的辅助参数
-	- ptype		图片类型
+	- ptype		图片类型(单图片支持多类型展示，采用;分割，且支持两个坐标系，追加:1，例如 “line;bar:1”)
 		- line	线图
 		- bar	柱状图
 		- area	区域图
@@ -63,6 +72,10 @@ Demo
 		- 具体参考：http://echarts.baidu.com/doc/doc.html#SeriesMarkPoint
 	- markLine  图形中的线标注
 		- 具体参考：http://echarts.baidu.com/doc/doc.html#SeriesMarkLine
+    - zoom  数据拖拽条
+        -start  开始百分比
+        -end    结束报粉笔
+        
 - 辅参2:table	表格的辅助参数
 	- scrolly	y轴长度
 	- page		分页数
@@ -84,6 +97,7 @@ Demo
 - 参2:title  表格的名称
 
 <h3>更新日志</h3>
+* 2015-01-08发布:V3.5版本发布,增加zoom控制，增加多图形支持
 * 2015-01-08发布:V3.4版本发布,大更新，采用Echart替代HighCharts,增加点/线标注，新增加一种维度
 * 2014-09-13发布:V3.2版本发布,大更新，扩展至三种纬度(事件/时间/统计)，并新增SmartTable汇集
 * 2014-07-16发布:V3.0版本发布,支持多纬度显示切换,支持线图,柱状图,区域图快速切换

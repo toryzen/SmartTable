@@ -1,5 +1,5 @@
 /*!
- * SmartTable 3.4
+ * SmartTable 3.5
  * http://toryzen.com/ | Released under GPLv3 license
  */
 
@@ -61,8 +61,9 @@ $(document).ready(function() {
                 "front":"table",
                 "graph":{
                     "ptype":"line",
-                    "markPoint":{"data" : []},
-                    "markLine":{"data" : []}
+                    "markPoint":{"data" : [] },
+                    "markLine":{"data" : [] },
+                    "zoom":{"start":0,"end":100}
                 },
                 "table":{
                     "scrolly":400,
@@ -83,7 +84,13 @@ $(document).ready(function() {
                     if(recive_data['graph']['markPoint'])
                         param['graph']['markPoint']     = recive_data['graph']['markPoint'];
                     if(recive_data['graph']['markLine'])
-                        param['graph']['markLine']     = recive_data['graph']['markLine'];                        
+                        param['graph']['markLine']     = recive_data['graph']['markLine'];   
+                    if(recive_data['graph']['zoom']){
+                        param['graph']['zoom']['start']   = recive_data['graph']['zoom']['start'];   
+                        param['graph']['zoom']['end']     = recive_data['graph']['zoom']['end'];   
+                    
+                    }
+                        
                 }
                 if(recive_data['table']){
                     if(recive_data['table']['scrolly']) 
@@ -429,11 +436,17 @@ $(document).ready(function() {
 			if(x>0){
 				series_x[x]={};
 				ptype_s = ptype.split(';');
+                
 				if(ptype_s[x]){
 					this_ptype = ptype_s[x];
 				}else{
 					this_ptype = ptype_s[0];
 				}
+                ptype_s_l = this_ptype.split(':');
+                if(ptype_s_l[1]==1){
+                    series_x[x]['yAxisIndex'] = 1;
+                }
+                this_ptype = ptype_s_l[0]
 				if(this_ptype=='column'){
 					this_ptype = 'bar';
 				}
@@ -482,6 +495,8 @@ $(document).ready(function() {
                 realtime : true,
                 y: 36,
                 height: 20,
+                start : param['graph']['zoom']['start'],
+                end : param['graph']['zoom']['end']
             },
             xAxis : [
                 {
@@ -490,6 +505,9 @@ $(document).ready(function() {
                 }
             ],
             yAxis : [
+                {
+                    type : 'value'
+                },
                 {
                     type : 'value'
                 }
