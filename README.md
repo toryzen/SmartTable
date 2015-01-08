@@ -1,8 +1,8 @@
-SmartTable v3.2
+SmartTable v3.4
 =======
 聪明的表格，基于一套数据源使用Ajax获取数据，并展现成表格与图像的形式，并且支持下载（思路源于talkingdata）<br/>
 
-开源引入：Bootstrap 3.0，Bootstrap respond (IE解决方案)，Jquery 11.02，dataTables，highcharts，table2CSV<br/>
+开源引入：Bootstrap 3.0，Bootstrap respond (IE解决方案)，Jquery 11.02，dataTables，echarts，table2CSV<br/>
 
 <h3>1.功能展示:</h3>
 ![image](https://github.com/toryzen/SmartTable/raw/master/screenshots/v3.2.png)
@@ -15,22 +15,44 @@ SmartTable v3.2
 
 <h3>2.示例&参数</h3>
 <pre>
-  &lt;div class="smart_here" src="./demodata.txt" title="SmartTables示例(Line)" pdim="time"  front="graph:area" >&lt;/div>
-  &lt;div class="smart_here" src="./demodata2.txt" title="SmartTables示例(Area)" pdim="event"  front="table" >&lt;/div>
+  &lt;div class="smart_here" src="./demodata.txt"  >&lt;/div>
+  &lt;div class="smart_here" src="./demodata2.txt" >&lt;/div>
 </pre>
-元素的class设置为smart_here,SmartTable会自动检测此组件并进行图表写入<br/>
-
-- 参1:src   源数据地址
-- 参2:title 表格标题
-- 参3:pdim 默认显示的纬度
+元素的class设置为smart_here,SmartTable会自动检测此组件并进行图表写入<br/><br/>
+Demo
+<pre>
+[{
+    "data":[['2014-07-20','0','12','644','0'],['2014-07-21','35','3','444','60'],['2014-07-22','9','10','144','0'],['2014-07-23','1','5','144','50'],['2014-07-24','2','656','155','1'],['2014-07-25','0','8','144','5'],['2014-07-26','7','1','220','0']],
+    "column":[{ "title": "时间"},{ "title": "iPad"},{ "title": "iPhone"},{ "title": "iPod touch"},{ "title": "PC"}],
+	"title":"我是测试数据",
+	"pdim":"total_time",
+	"front":"graph",
+	"graph":{
+		"ptype":"line",
+		"markPoint":{
+			"data" : [{"type" : 'max', "name": "最大值"}]
+		},"markLine":{
+			"data" : [{"type" : "max", "name": "自定义名字"}]
+		}
+	},
+    "table":{
+         "scrolly":400,
+         "page":200,
+         "scrollx":true
+    }
+}]
+</pre>
+- 参1:data   数据源(时间维度)
+- 参2:column 表头(事件)
+- 参3:title  SmartTable名称
+- 参3:pdim   默认维度
 	- time  时间纬度 ： 时间为横轴，每一条线为一个事件
 	- event 事件纬度 ： 事件为横轴，每一条线为一个时间
-	- total 统计纬度 ： 时间为横轴，展示各事件数值的一个加和与平均
+	- total_time  统计(时间)纬度 ： 时间为横轴，展示各事件数值的一个加和与平均
+	- total_event 统计(事件)纬度 ： 事件为横轴，展示各时间数值的一个加和与平均
 - 参4:front 默认显示在前面
 	- table			表格
-	- graph:area		区域图
-	- graph:line		折线图
-	- graph:column	柱状图
+	- graph		    图形
 
 <h3>3.数据格式</h3>
 <pre>
