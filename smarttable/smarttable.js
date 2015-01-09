@@ -1,5 +1,5 @@
 /*!
- * SmartTable 3.5
+ * SmartTable 3.6
  * http://toryzen.com/ | Released under GPLv3 license
  */
 
